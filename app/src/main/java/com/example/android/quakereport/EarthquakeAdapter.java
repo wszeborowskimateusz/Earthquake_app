@@ -31,25 +31,25 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake>{
                     R.layout.earthquake_item, parent, false);
         }
 
-        // Get the {@link Word} object located at this position in the list
+        // Get the {@link Earthquake} object located at this position in the list
         final Earthquake currentEarthquake = getItem(position);
 
 
-        // Find the TextView in the list_item.xml layout with the ID miwok_text_view
+        // Find the TextView in the eqrthquake_item.xml layout with the ID magnitude_text_view
         TextView magntude = (TextView) listItemView.findViewById(R.id.magnitude_text_view);
-        // Get the miwok translation from the current Word object and
+        // Get the magnitude from the current Earthquake object and
         // set this text on the name TextView
         magntude.setText(currentEarthquake.getMagitude());
 
-        // Find the TextView in the list_item.xml layout with the ID default_text_view
+        // Find the TextView in the eqrthquake_item.xml layout with the ID location_text_view
         TextView location = (TextView) listItemView.findViewById(R.id.location_text_view);
-        // Get the default translation from the current Word object and
+        // Get the location from the current Earthquake object and
         // set this text on the number TextView
         location.setText(currentEarthquake.getLocation());
 
-        // Find the TextView in the list_item.xml layout with the ID miwok_text_view
+        // Find the TextView in the eqrthquake_item.xml layout with the ID date_text_view
         TextView date = (TextView) listItemView.findViewById(R.id.date_text_view);
-        // Get the miwok translation from the current Word object and
+        // Get the date from the current Earthquake object and
         // set this text on the name TextView
         date.setText(currentEarthquake.getDate());
 
