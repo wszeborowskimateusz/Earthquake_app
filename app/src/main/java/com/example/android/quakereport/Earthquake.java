@@ -7,7 +7,7 @@ package com.example.android.quakereport;
 public class Earthquake {
 
     //The magnitude of the Earthquake
-    private String mMagitude;
+    private double mMagitude;
 
     //The location of the Earthquake
     private String mLocation;
@@ -15,13 +15,13 @@ public class Earthquake {
     /** Time of the earthquake */
     private long mTimeInMilliseconds;
 
-    public Earthquake(String mMagitude, String mLocation, long mTime) {
+    public Earthquake(double mMagitude, String mLocation, long mTime) {
         this.mMagitude = mMagitude;
         this.mLocation = mLocation;
         this.mTimeInMilliseconds = mTime;
     }
 
-    public String getMagitude() {
+    public double getMagitude() {
         return mMagitude;
     }
 
