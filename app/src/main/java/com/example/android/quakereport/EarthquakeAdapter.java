@@ -19,6 +19,8 @@ import java.util.List;
 
 public class EarthquakeAdapter extends ArrayAdapter<Earthquake>{
 
+    private static final String LOCATION_SEPARATOR = " of ";
+
     public EarthquakeAdapter(@NonNull Context context,  @NonNull List<Earthquake> objects) {
         super(context, 0, objects);
     }
@@ -43,11 +45,30 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake>{
         // set this text on the name TextView
         magntude.setText(currentEarthquake.getMagitude());
 
+
+        String location = currentEarthquake.getLocation();
+        String formatedLocationOffset="";
+        String formatedPrimaryLocation=location;
+
+        if(location.contains(LOCATION_SEPARATOR)) {
+            String [] parts = location.split(LOCATION_SEPARATOR);
+            formatedLocationOffset = parts[0] + LOCATION_SEPARATOR;
+            formatedPrimaryLocation = parts[1];
+        }
+        else formatedLocationOffset = getContext().getString(R.string.near_the);;
+
         // Find the TextView in the eqrthquake_item.xml layout with the ID location_text_view
-        TextView location = (TextView) listItemView.findViewById(R.id.location_text_view);
+        TextView primaryLocation = (TextView) listItemView.findViewById(R.id.primary_location_text_view);
         // Get the location from the current Earthquake object and
         // set this text on the number TextView
-        location.setText(currentEarthquake.getLocation());
+        primaryLocation.setText(formatedPrimaryLocation);
+
+        // Find the TextView in the eqrthquake_item.xml layout with the ID location_text_view
+        TextView locationOffset = (TextView) listItemView.findViewById(R.id.location_offset_text_view);
+
+        // Get the location from the current Earthquake object and
+        // set this text on the number TextView
+        locationOffset.setText(formatedLocationOffset);
 
 
         // Create a new Date object from the time in milliseconds of the earthquake

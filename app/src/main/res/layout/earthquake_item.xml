@@ -11,7 +11,12 @@
         android:layout_weight="1"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/location_text_view"
+        android:id="@+id/location_offset_text_view"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/primary_location_text_view"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content" />
