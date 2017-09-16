@@ -15,10 +15,18 @@ public class Earthquake {
     /** Time of the earthquake */
     private long mTimeInMilliseconds;
 
-    public Earthquake(double mMagitude, String mLocation, long mTime) {
+    //The magnitude of the Earthquake
+    private String mURL;
+
+    public String getmURL() {
+        return mURL;
+    }
+
+    public Earthquake(double mMagitude, String mLocation, long mTime,String url) {
         this.mMagitude = mMagitude;
         this.mLocation = mLocation;
         this.mTimeInMilliseconds = mTime;
+        this.mURL = url;
     }
 
     public double getMagitude() {
